@@ -1,0 +1,84 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+body {
+	padding-left: 5px;
+	padding-right: 5px;
+	touch-action: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #47811e;
+	height: clac(100% - 1rem);
+}
+
+.game-hud {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	max-width: 500px;
+}
+
+.game-hud div {
+	padding: 0.5rem;
+	flex: 1;
+}
+
+.title-text {
+	width: 100%;
+}
+
+.game-box-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-box {
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 10px;
+	box-shadow: 0px 10px 5px #00000080;
+	/* Keep this pixelated if you are making low res games */
+	image-rendering: pixelated;
+}
+
+.by-label {
+	margin-top: 20px;
+}
+
+@media (orientation: landscape) {
+	.game-hud {
+		display: none;
+	}
+	.game-box-container {
+		height: 100%;
+	}
+	/* If device is in landscape this will help keep the correct aspect ratio */
+	.game-box {
+		height: 100%;
+	}
+}
+
+@media (orientation: portrait) {
+	.game-box-container {
+		width: 100%;
+	}
+	/* If device is in portrait this will help keep the correct aspect ratio */
+	.game-box {
+		max-width: 500px;
+		width: 100%;
+	}
+}
